@@ -21,6 +21,6 @@ class NumberFormView(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             # <process form cleaned data>
-            return render(request, self.template_name, {'form': form, 'result': num2words(form.cleaned_data['number'])})
-
-        return render(request, self.template_name, {'form': form})  # might be good to display error results here
+            return render(request, self.template_name, {'form':  self.form_class(), 'result': num2words(form.cleaned_data['number'])})
+        else:
+            return render(request, self.template_name, {'form': form, 'error': True})  # might be good to display error results here

@@ -23,6 +23,9 @@
 {% if result %}
     <b>AND YOUR ANSWER IS: </b>
         {{ result }}
-    {% endif %}
+{% endif %}
+{% if error %}
+    <b>Something is wrong. Why did you do that?</b>
+{% endif %}
 </body>
 </html>
